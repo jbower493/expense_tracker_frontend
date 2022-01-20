@@ -1,7 +1,7 @@
 // Imports
 import { ReactElement } from 'react';
 import styled from 'styled-components';
-import { Category } from 'App';
+import { Category } from 'components/dashboard/dashboardSlice';
 
 
 // Types
@@ -17,7 +17,7 @@ type ProgressSpendProps = {
 // Styles
 const StyledSummary = styled.section`
     border-radius: 10px;
-    border: #001a5c solid 2px;
+    border: ${({ theme }) => theme.colors.primary} solid 2px;
     padding: 10px;
     margin-bottom: 15px;
     height: 80px;
@@ -37,14 +37,14 @@ const Text = styled.div`
     align-items: flex-end;
 
     h4 {
-        color: #001a5c;
+        color: ${({ theme }) => theme.colors.primary};
         font-size: 14px;
         font-weight: 600;
         text-transform: capitalize;
     }
 
     p {
-        color: #001a5c;
+        color: ${({ theme }) => theme.colors.primary};
         font-size: 14px;
     }
 `;
@@ -57,7 +57,7 @@ const ProgressContainer = styled.div`
 `;
 
 const ProgressBackground = styled.div`
-    background-color: #eaeaea;
+    background-color: ${({ theme }) => theme.colors.lightGray};
     height: 100%;
     width: 100%;
     border-radius: 40px;
@@ -65,13 +65,13 @@ const ProgressBackground = styled.div`
 
 const ProgressSpend = styled.div<ProgressSpendProps>`
     height: 100%;
-    background-color: #00ffc2;
+    background-color: ${({ theme }) => theme.colors.secondary};
     border-radius: 40px;
     width: ${(props) => props.width <= 120 ? props.width : 120}%;
 `;
 
 const ProgressStopper = styled.div`
-    border-right: #001a5c 2px dashed;
+    border-right: ${({ theme }) => theme.colors.primary} 2px dashed;
     height: 25px;
     position: absolute;
     right: 0;
