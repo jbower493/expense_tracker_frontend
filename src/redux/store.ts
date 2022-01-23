@@ -1,12 +1,14 @@
-// Imports
+/*********************************************************
+* IMPORTS
+*********************************************************/
 import { configureStore } from '@reduxjs/toolkit';
-import dashboardReducer from 'components/dashboard/dashboardSlice';
+import counterReducer from 'components/exampleSlice/exampleSlice';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { dashboardApi } from 'api/dashboard';
+import { dashboardApi } from 'components/dashboard/api';
 
 export const store = configureStore({
     reducer: {
-        dashboard: dashboardReducer,
+        counter: counterReducer,
         [dashboardApi.reducerPath]: dashboardApi.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
@@ -16,7 +18,7 @@ export const store = configureStore({
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: { dashboard: dashboardState }
+// Inferred type: { counter: counterState }
 export type AppDispatch = typeof store.dispatch
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors

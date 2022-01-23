@@ -1,10 +1,14 @@
-// Imports
+/*********************************************************
+* IMPORTS
+*********************************************************/
+/* BASE *************************************************/
 import { ReactElement } from 'react';
 import styled from 'styled-components';
 import config from 'config/config.json';
 
-
-// Styles
+/*********************************************************
+*   STYLES
+*********************************************************/
 const StyledHeader = styled.header`
     background-color: ${({ theme }) => theme.colors.primary};
     height: 50px;
@@ -18,8 +22,9 @@ const StyledHeader = styled.header`
     }
 `;
 
-
-// Component
+/*********************************************************
+*   COMPONENT
+*********************************************************/
 const Header = (): ReactElement => {
     return (
         <StyledHeader>
@@ -28,4 +33,7 @@ const Header = (): ReactElement => {
     )
 }
 
+/*********************************************************
+*   EXPORT
+*********************************************************/
 export default Header;

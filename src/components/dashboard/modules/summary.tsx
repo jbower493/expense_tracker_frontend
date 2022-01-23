@@ -1,23 +1,19 @@
-// Imports
+/*********************************************************
+* IMPORTS
+*********************************************************/
+/* BASE *************************************************/
 import { ReactElement } from 'react';
 import styled from 'styled-components';
-import { Category } from 'components/dashboard/dashboardSlice';
 
+/* COMPONENTS *******************************************/
+import { Category } from 'components/dashboard/models';
 
-// Types
-type SummaryProps = {
-    category: Category
-};
-
-type ProgressSpendProps = {
-    width: number
-};
-
-
-// Styles
+/*********************************************************
+*   STYLES
+*********************************************************/
 const StyledSummary = styled.section`
     border-radius: 10px;
-    border: ${({ theme }) => theme.colors.primary} solid 2px;
+    background-color: white;
     padding: 10px;
     margin-bottom: 15px;
     height: 80px;
@@ -78,8 +74,20 @@ const ProgressStopper = styled.div`
     bottom: 0;
 `;
 
+/*********************************************************
+*   TYPES
+*********************************************************/
+type SummaryProps = {
+    category: Category
+};
 
-// Component
+type ProgressSpendProps = {
+    width: number
+};
+
+/*********************************************************
+*   COMPONENT
+*********************************************************/
 const Summary = ({ category }: SummaryProps): ReactElement => {
     const { categoryName, spend, budget } = category;
 
@@ -101,4 +109,7 @@ const Summary = ({ category }: SummaryProps): ReactElement => {
     );
 };
 
+/*********************************************************
+*   EXPORT
+*********************************************************/
 export default Summary;

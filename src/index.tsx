@@ -57,15 +57,21 @@
 //     name: 'John'
 // }
 
-// Imports
+/*********************************************************
+* IMPORTS
+*********************************************************/
+/* BASE *************************************************/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { store } from 'redux/store';
 import { Provider } from 'react-redux';
+
+/* COMPONENTS *******************************************/
 import App from 'App';
 
-
-// Component
+/*********************************************************
+*   COMPONENT
+*********************************************************/
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
